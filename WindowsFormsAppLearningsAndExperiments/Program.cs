@@ -61,6 +61,7 @@ namespace WindowsFormsAppLearningsAndExperiments
         
         private void SelectButton_Click(object sender, EventArgs e)
         {
+            //need to add code to open the file with file path: "c:\testData\DTL\Test_didata_de.valid_Booking1Line.csv" or any other file and file path per initialDir = "C:\\testData\\DTL\\" and FileName = "Test_didata_de.valid_Booking1Line.csv"
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try
