@@ -97,6 +97,7 @@ namespace WindowsFormsAppLearningsAndExperiments
         Thread t;
         private const string initialDir = "C:\\testData\\DTL\\";
         private const string FileName = "Test_didata_de.valid_Booking1Line.csv"; //"test.txt";
+        private readonly object childWindow;
 
         private void SelectButton_Click(object sender, EventArgs e)
         {
@@ -107,6 +108,9 @@ namespace WindowsFormsAppLearningsAndExperiments
                 openFileDialog1.InitialDirectory = initialDir; // setting directory name
                 openFileDialog1.FileName = FileName; // filename
                 BeginInvoke((Action)(() => openFileDialog1.ShowDialog())); // we need to use BeginInvoke to continue to the following code.  NEED TO BE ABLE MAKE AUTO-CLICK OPEN BUTTON HERE
+                //openFileDialog1.//childWindow.Get(SearchCriteria.ByAutomationId("1148")).Select(1);
+                //var OpenButton = childWindow.Get(SearchCriteria.ByClassName("Button").AndAutomationId("1"));
+                //OpenButton.DoubleClick();
                 t = new Thread(new ThreadStart(SendKey)); // Sends Key to Dialog with an seperate Thread.
                 t.Start(); // Thread starts.
 
